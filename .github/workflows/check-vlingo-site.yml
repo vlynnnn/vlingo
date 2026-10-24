@@ -1,0 +1,29 @@
+name: Diagnose vlingo website access
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/check-vlingo-site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check DNS and Cloudflare Workers responses
+        shell: bash
+        run: |
+          set +e
+          echo '=== DNS ==='
+          getent ahostsv4 vlingo.vlynnhow.workers.dev | head -8
+          echo '=== HTTP responses ==='
+          for p in / /index.html /assets/app.js /assets/cat-logo-96.png /data/lexicon.js; do
+            echo "PATH: $p"
+            curl -L -sS --connect-timeout 8 --max-time 18 -o /tmp/vlingo_response -D /tmp/vlingo_headers -w 'http=%{http_code} remote_ip=%{remote_ip} effective_url=%{url_effective} size=%{size_download}\n' "https://vlingo.vlynnhow.workers.dev$p"
+            grep -iE '^(server|cf-ray|location|content-type|cache-control):' /tmp/vlingo_headers | head -7 || true
+            head -c 90 /tmp/vlingo_response | strings | head -2 || true
+          done
