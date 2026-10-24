@@ -1,5 +1,4 @@
-name: Import vlingo website from published site
-# Recheck live site after uploading cat-logo build
+name: Import vlingo website from correct published site
 
 on:
   push:
@@ -21,7 +20,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          site='https://vlingo-study.vlynnhow.workers.dev'
+          site='https://vlingo.vlynnhow.workers.dev'
           files=(
             index.html
             assets/app.js
