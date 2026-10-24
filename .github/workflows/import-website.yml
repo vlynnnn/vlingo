@@ -1,0 +1,58 @@
+name: Import vlingo website from published site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fetch the deployed static site
+        shell: bash
+        run: |
+          set -euo pipefail
+          site='https://vlingo-study.vlynnhow.workers.dev'
+          files=(
+            index.html
+            assets/app.js
+            assets/styles.css
+            assets/cat-logo-96.png
+            assets/cat-logo-256.png
+            assets/icon.svg
+            assets/icon-16.png
+            assets/icon-32.png
+            assets/icon-48.png
+            assets/icon-180.png
+            assets/icon-192.png
+            assets/icon-512.png
+            data/lexicon.js
+            favicon.ico
+            manifest.webmanifest
+            sw.js
+          )
+          for f in "${files[@]}"; do
+            mkdir -p "$(dirname "$f")"
+            curl --fail --location --retry 3 --connect-timeout 15 --max-time 120 \
+              --output "$f" "$site/$f"
+            test -s "$f" || { echo "Empty file: $f"; exit 1; }
+          done
+          # Prevent committing an error page in place of the data.
+          grep -q 'vl0001' data/lexicon.js
+          grep -qi 'vlingo' index.html
+          echo 'Site files downloaded.'
+      - name: Commit website to repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html assets data favicon.ico manifest.webmanifest sw.js
+          if ! git diff --cached --quiet; then
+            git commit -m 'site: import published vlingo website and eight-language data'
+            git push
+          fi
