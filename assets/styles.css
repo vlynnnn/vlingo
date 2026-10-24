@@ -4,3 +4,23 @@
 @media(max-width:1100px){.topic-grid{grid-template-columns:repeat(2,1fr)}.main{padding:26px 26px 85px}.hero .orb{font-size:65px}}
 @media(max-width:760px){.app{display:block}.side{display:none}.main{padding:20px 15px 97px}.bottom{position:fixed;bottom:0;left:0;right:0;z-index:15;display:grid;grid-template-columns:repeat(5,1fr);background:#fffffff5;border-top:1px solid var(--line);padding:8px 3px calc(7px + env(safe-area-inset-bottom));box-shadow:0 -7px 25px #153e2910}.bottom button{border:0;background:transparent;color:#8b9c90;font-size:22px;display:grid;gap:3px;justify-items:center;padding:5px 0;min-height:47px}.bottom button small{font-size:10px;font-weight:700}.bottom button.active{color:var(--brand)}.topline{margin:0 0 18px}.hero{padding:26px 22px;min-height:0}.hero .orb{font-size:49px;align-self:flex-start;margin-left:4px}.hero h2{font-size:25px}.stats{gap:8px}.stat{padding:15px 13px}.stat b{font-size:23px}.stat span{font-size:11px}.topic-grid{gap:10px}.topic{min-height:143px;padding:15px;gap:10px}.topic h3{font-size:14px}.topic p{font-size:11px}.topic .emoji{font-size:26px}.panel,.studyframe{padding:17px;border-radius:16px}.langs-grid{grid-template-columns:1fr}.lcard{padding:15px}.lword{font-size:22px}.guide-nav{grid-template-columns:repeat(2,1fr)}.rule-grid{grid-template-columns:repeat(2,1fr)}.kana-grid{gap:5px}.kana{min-height:68px}.kana b{font-size:23px}.sectionhead h2{font-size:18px}.catalog-head{align-items:start}.toolbar{align-items:stretch}.search{min-width:0}.studynav{justify-content:center}.studynav>div{width:100%;display:flex;justify-content:space-between}.btn{padding:10px 13px}.footer{padding-bottom:9px}.notice{margin:13px 0}}
 @media(max-width:380px){.main{padding-left:12px;padding-right:12px}.topic-grid{grid-template-columns:1fr 1fr}.hero .orb{display:none}.lword{font-size:21px}.stat b{font-size:20px}}
+
+/* v2: 学会列表可直接打开与撤销 */
+.stat-link{font:inherit;color:inherit;text-align:left;cursor:pointer;width:100%}
+.stat-link:hover{border-color:#90cba6;background:#f8fcf9}
+.known-row{padding:0 10px 0 0;gap:8px;min-height:72px}
+.known-row:hover{background:#fff}
+.known-open{display:flex;flex:1;min-width:0;flex-direction:column;align-items:flex-start;justify-content:center;gap:3px;text-align:left;padding:13px 15px;background:transparent;border:0;color:var(--ink);cursor:pointer}
+.known-open:hover{background:#f6fbf7}
+.known-open b{font-size:14px}
+.known-open small{display:block;font-size:12px;color:var(--muted);line-height:1.5;overflow-wrap:anywhere}
+.known-reset{flex-shrink:0;color:#98603f;border-color:#ead7c7;background:#fffaf6;font-size:12px}
+.known-reset:hover{background:#fff1e8;border-color:#dbbba5}
+.morebox{text-align:center;padding:16px 0}
+@media(max-width:760px){.review-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%}.review-tabs button{padding:11px 5px;font-size:12px}.known-row{gap:3px}.known-open{padding:12px 9px 12px 12px}.known-reset{padding:8px 9px;min-height:34px;font-size:11px}}
+
+/* v3 | 正式黑猫标志：沿用 V2 版全部学习界面与数据 */
+.logo .logo-icon{display:block;flex:0 0 48px;object-fit:contain;background:white;border:1px solid #e9eeeb;padding:1px;box-shadow:none;border-radius:12px;width:48px;height:48px;font-style:normal}
+.crumb-brand{display:inline-flex;align-items:center;gap:9px;min-width:0}
+.top-logo{display:none;width:32px;height:32px;object-fit:contain;border-radius:9px;border:1px solid #edf0ed;background:white;flex:none}
+@media(max-width:760px){.top-logo{display:block}.crumb{letter-spacing:0;font-size:11px}.crumb-brand{gap:6px}}
