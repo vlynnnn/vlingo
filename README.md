@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://vlingo-study.vlynnhow.workers.dev/assets/cat-logo-256.png" alt="vlingo 红耳黑猫 Logo" width="112">
+<img src="assets/icon.svg" alt="vlingo 红耳黑猫 Logo" width="112">
 
 # vlingo · 微邻国
 
