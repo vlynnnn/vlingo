@@ -6,7 +6,7 @@
 
 **一个意思，八种语言，一起学。**
 
-[🌐 在线体验](https://vlingo-study.vlynnhow.workers.dev/) · [📱 安卓安装包（发布中）](https://github.com/vlynnnn/vlingo/releases)
+[🌐 在线体验](https://vlingo.vlynnhow.workers.dev/) · [📱 安卓安装包（发布中）](https://github.com/vlynnnn/vlingo/releases)
 
 </div>
 
@@ -26,7 +26,7 @@
 - 可查看并撤销“已学会”标记。
 - 展示文字读音参考（IPA、假名、罗马字、粤拼等）；学习记录主要保存在本机，可手动备份。
 
-**在线使用：** https://vlingo-study.vlynnhow.workers.dev/
+**在线使用：** https://vlingo.vlynnhow.workers.dev/
 
 **安卓 APK：** 测试版安装包准备上传到 [Releases](https://github.com/vlynnnn/vlingo/releases)。请以实际发布的附件为准；当前若没有 Release，表示尚未上传完成。
 
