@@ -41,8 +41,15 @@ jobs:
           )
           for f in "${files[@]}"; do
             mkdir -p "$(dirname "$f")"
-            curl --fail --location --retry 3 --connect-timeout 15 --max-time 120 \
-              --output "$f" "$site/$f"
+            if ! curl --silent --show-error --fail --location --retry 2 --connect-timeout 15 --max-time 120 \
+              --output "$f" "$site/$f"; then
+              if [[ "$f" == "index.html" || "$f" == "assets/app.js" || "$f" == "assets/styles.css" || "$f" == "data/lexicon.js" ]]; then
+                echo "Required file unavailable: $f"; exit 1
+              fi
+              echo "Optional graphic missing: $f"
+              rm -f "$f"
+              continue
+            fi
             test -s "$f" || { echo "Empty file: $f"; exit 1; }
           done
           # Prevent committing an error page in place of the data.
