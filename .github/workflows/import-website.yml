@@ -1,6 +1,10 @@
 name: Import vlingo website from published site
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-website.yml'
   workflow_dispatch:
 
 permissions:
