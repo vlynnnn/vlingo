@@ -6,7 +6,7 @@
 
 **一个意思，八种语言，一起学。**
 
-[🌐 在线体验](https://vlingo.vlynnhow.workers.dev/) · [📱 安卓安装包（发布中）](https://github.com/vlynnnn/vlingo/releases)
+[🌐 在线体验](https://vlingo.vlynnhow.workers.dev/) · [📱 下载 Android APK v1.0](https://github.com/vlynnnn/vlingo/releases/download/v1.0/vlingo._.apk)
 
 </div>
 
@@ -28,7 +28,7 @@
 
 **在线使用：** https://vlingo.vlynnhow.workers.dev/
 
-**安卓 APK：** 测试版安装包准备上传到 [Releases](https://github.com/vlynnnn/vlingo/releases)。请以实际发布的附件为准；当前若没有 Release，表示尚未上传完成。
+**安卓 APK：** 已发布 [Android v1.0](https://github.com/vlynnnn/vlingo/releases/tag/v1.0)，可 [直接下载 APK](https://github.com/vlynnnn/vlingo/releases/download/v1.0/vlingo._.apk)。这是个人测试构建，请注意安装安全提示与设备兼容性。
 
 ## ⚠️ Vibe Coding 与准确性声明
 
@@ -47,7 +47,7 @@
 ## 关于安装与源码
 
 - 在线版在电脑和手机浏览器均可使用。
-- 安卓 APK 是个人测试版本，尚未经过应用商店审核或广泛真机兼容测试。发布后请在 Releases 中下载。
+- 安卓 APK 是个人测试版本，尚未经过应用商店审核或广泛真机兼容测试。请在 [Releases](https://github.com/vlynnnn/vlingo/releases/tag/v1.0) 中下载。
 - 项目拟公开展示网页源码与学习内容，当前**尚未指定开源许可证**；公开可见不等于已获得商业再利用许可。
 
 
